@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="GBK">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+var xmlDocument =`<xml>
+    <ToUserName><![CDATA[gh_203413aea56d]]></ToUserName>
+    <FromUserName><![CDATA[ojpX_jig-gyi3_Q9fHXQ4rdHniQs]]></FromUserName>
+    <CreateTime>345672940</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[scancode_waitmsg]]></Event>
+    <ScanResult><![CDATA[123453755]]></ScanResult>
+    <MsgId>1234567890abcdef</MsgId>
+</xml>`
+$.ajax({
+url: "/index.asp",
+type:"post",
+processData: false,
+data: xmlDocument,
+success: function(data){
+console.log(data);
+}
+});
+
+</script>
+</head>
+<body>
+
+<div id="txtCDInfo">
+<button onclick="">获得 CD 信息</button>
+</div>
+
+</body>
+</html>
