@@ -8,7 +8,7 @@ $(function(){
             data:{url:url},
             success : function(data) {
 
-    	wx.config({
+        wx.config({
                     debug: false,////生产环境需要关闭debug模式
                     appId: data.appId,//appId通过微信服务号后台查看
                     timestamp: data.timestamp,//生成签名的时间戳
@@ -22,10 +22,10 @@ $(function(){
                         'onMenuShareWeibo'
                     ]
                 });
-    		},
-    		error:function(xhr, status, error){
-    		
-    		}
+            },
+            error:function(xhr, status, error){
+            
+            }
     })
     var meta = document.getElementsByTagName('meta'); 
     var share_desc = ''; 
@@ -37,13 +37,12 @@ $(function(){
     var wstitle = document.title //此处填写分享标题
     var wsdesc = share_desc; //此处填写分享简介
     var wslink = url; //此处获取分享链接
-    var wsimglink = document.getELementsByTagName('link');
+    var wsimglink = document.getElementsByTagName('link');
     var wsimg = "";
     for(j in wsimglink){
-        if(typeof wsimglink[j].rel!="undefined"&&wsimglink[j].rel.toLowerCase()="shortcut icon")
-            wsimg = wsimglink.href//此处获取分享缩略图
+        if(typeof wsimglink[j].rel!="undefined"&&wsimglink[j].rel.toLowerCase()=="shortcut icon")
+            wsimg = wsimglink[j].href//此处获取分享缩略图
     }
-
 
     wx.ready(function () {
 
